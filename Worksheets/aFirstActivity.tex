@@ -1,44 +1,17 @@
 \documentclass{ximera}
-
-\title{A basic worksheet}
-\author{Wim Obbels \and Bart Snapp}
+\usepackage{multicol}
+\title{Exam 1 Review}
+\author{Rachel Bailey}
 \license{CC: 0}         % replace with an appropriate license, or set it in xmPreamble
 
 \begin{document}
 \begin{abstract}
-    A simple Ximera activity. %%  A one line description of the activity.
+   This review covers covers sections...
 \end{abstract}
 \maketitle
-\label{xim:aFirstActivity}
-
-Perhaps the most natural setting for Ximera content is that of a
-\textit{worksheet}. This is some document that may contain discussion as well
-as questions that check understanding.
-
-Ximera comes pre-equipped with many environments.  If you are ever curious about
-the source code, you can visit this source at
-
-\begin{center}
-    \url{https://github.com/ximeraProject/ximeraFirstOverleafSteps}
-\end{center}
-or by appending \verb|.tex| to the URL of this page online. 
 
 
-\section{A basic use case}
-We use \verb|\begin{definition}| for definitions and \verb|\begin{question}| for
-questions. Since Ximera provides immediate feedback, we suggest following
-definitions like this one by a quick question. Here's an example:
 
-\begin{definition}\label{def:absolute_value}
-    The \textbf{absolute value} of a real number $a$, denoted by $|a|$, is
-    \[
-        |a| = \begin{cases}
-            a  & \text{if $a \geq 0$} \\
-            -a & \text{if $a<0$.}
-        \end{cases}
-    \]
-\end{definition}
-Now students can check their understanding:
 
 \begin{problem}
 Find the domains of the following functions and write them in interval notation.
@@ -55,7 +28,7 @@ Find the domains of the following functions and write them in interval notation.
 \begin{enumerate}
 \item $ e^{x^2+3x-17}=e$
 \[
-         \answer[validator=multiAns]{[-6,3x,1-x]},\answer[validator=multiAns]{[-6x,3x]}
+         \answer[validator=multiAns]{[-6,3]},\answer[validator=multiAns]{[-6,3]}
         \]
 
 
@@ -69,8 +42,9 @@ x=\answer{\frac{\pi}{3}, \frac{2\pi}{3}, \frac{4\pi}{3}, \frac{5\pi}{3}}
 \]
 \item $\ln(x+6)+\ln(x+1)=\ln(3)+2\ln(2\sqrt{x})$
 \[
-x=\answer{2,3}
-\]
+    x=\answer[validator=multiAns]{[2,3]},\answer[validator=multiAns]{[2,3]}
+        \]
+
 
 \end{enumerate}
 \end{question}
@@ -280,39 +254,67 @@ Consider the graph of $f(x)$ below.
     \item State all the discontinuities of $f(x)$ and list their types.
 
     \item Find the following:
-  
+  \begin{multicols}{2}
     \begin{enumerate}
-        \item $\lim\limits_{x\to 0}f(x)$
+        \item $\lim\limits_{x\to 0}f(x)=\begin{prompt}
+            \answer{-1}
+        \end{prompt}$
   
-        \item $\lim\limits_{x\to -1^-}f(x)$
+        \item $\lim\limits_{x\to -1^-}f(x)=\begin{prompt}
+            \answer{0}
+        \end{prompt}$
      
-        \item $\lim\limits_{x\to -1^+}f(x)$
+        \item $\lim\limits_{x\to -1^+}f(x)=\begin{prompt}
+            \answer{-\frac{1}{2}}
+        \end{prompt}$
   
-        \item $\lim\limits_{x\to -1}f(x)$
+        \item $\lim\limits_{x\to -1}f(x)=\begin{prompt}
+            \answer{DNE}
+        \end{prompt}$
 
-        \item $\lim\limits_{x\to -3^-}f(x)$
+        \item $\lim\limits_{x\to -3^-}f(x)=\begin{prompt}
+            \answer{0}
+        \end{prompt}$
 
-        \item $\lim\limits_{x\to -3^+}f(x)$
+        \item $\lim\limits_{x\to -3^+}f(x)=\begin{prompt}
+            \answer{0}
+        \end{prompt}$
       
-          \item $\lim\limits_{x\to -3}f(x)$
+          \item $\lim\limits_{x\to -3}f(x)=\begin{prompt}
+            \answer{0}
+        \end{prompt}$
      
-        \item $\lim\limits_{x\to 1^+}f(x)$
+        \item $\lim\limits_{x\to 1^+}f(x)=\begin{prompt}
+            \answer{\infty}
+        \end{prompt}$
     
-        \item $\lim\limits_{x\to 1^-}f(x)$
+        \item $\lim\limits_{x\to 1^-}f(x)=\begin{prompt}
+            \answer{-\infty}
+        \end{prompt}$
  
-        \item $f(-3)$
+        \item $f(-3)=\begin{prompt}
+            \answer{2}
+        \end{prompt}$
 
-        \item $f(1)$
-    
+        \item $f(1)=\begin{prompt}
+    \answer[validator=multiAns]{[DNE,Undefined]}
+        \end{prompt}$
+
+    \item $\lim\limits_{x\to \infty}f(x)=\begin{prompt}
+            \answer[validator=multiAns]{[-1,-\frac{3}{4}]}
+        \end{prompt}$
+
+    \item $\lim\limits_{x\to -\infty}f(x)=\begin{prompt}
+            \answer{\infty}
+        \end{prompt}$
            \end{enumerate}
-  
-   
+ \end{multicols} 
 \end{enumerate}
+
+
 \end{problem}
 \section{Basic exercises}
 
-After that, you might want to have some exercises.
-You will not find any inspiration in the above \hyperref[def:absolute_value]{definition of the absolute value}.
 
 \begin{exercise}
     Let $x$ be the number of people
