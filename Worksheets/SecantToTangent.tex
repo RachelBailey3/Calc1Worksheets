@@ -13,31 +13,84 @@
 
 \begin{question} 
 \begin{enumerate}
-    \item Suppose a car traveled 100 miles in 2 hours. What was the car's average speed during this time?
+    \item Suppose a car traveled 180 miles in 3 hours. What was the car's average speed during this time?
+    
+\[
+\answer{60} \text{mi/hr}
+\]
  
-  \item Now suppose we know that the car had traveled 57 miles after 1 hour and 113 miles after 3 hours. What was the car's average speed during the last two hours?
-
+  \item Now suppose we know that the car had traveled 35 miles after 1 hour and 120 miles after 3 hours. What was the car's average speed during the last two hours?
+\[
+\answer{42.5}\text{ mi/hr}
+\]
   \item If the car had traveled 35  miles after 1 hour and 80 miles after 2 hours, what was it's average speed between the first hour and second hour?
- 
+ \[
+ \answer{45}\text{ mi/hr}
+ \]
 \end{enumerate}
 
    
 \end{question}
 
 \begin{question}
-    Suppose you are driving from campus and you car's position $P$ after $t$ hours is given by $P(t)=9t^{\frac{1}{3}}$ (where $P(0)=0$ means the car starts at Bentley). For each of the given pairs of time values $t_1$ and $t_2$, do the following:
+    Suppose you are driving from campus and you car's position $P$ after $t$ hours is given by $P(t)=50t^2+50$ (where $P(0)=0$ means the car starts at Bentley). For each of the given pairs of time values $t_1$ and $t_2$, do the following:
     \begin{itemize}
         \item Find the average speed of the car between the two times $t_1$ and $t_2$.
         \item On the Desmos graph, plot the line through the two points $(t_1, P(t_1))$ and $(t_2, P(t_2))$
-        \item Determine the slope of that line.
+        \item Determine the equation and slope of that line.
     \end{itemize}
     \begin{enumerate}
-        \item $t_1=1, t_2=3$
-        \item $t_1=1, t_2=2$
-        \item $t_1=1, t_2=1.5$
-        \item $t_1=1, t_2=1.25$
-        \item $t_1=1, t_2=1.05$
-        \item $t_1=1, t_2=1.0005$
+        \item $t_1=3, t_2=5$
+        \[
+        \text{ Average speed: }
+        \answer{ 40} \text{ mi/hr}
+        \]
+        \[
+        \text{Line: }\answer{y=40(x-3)+95}\]
+        \[
+        \text{Slope: }\answer{40}
+        \]
+        \item $t_1=3, t_2=4$
+         \[
+        \text{ Average speed: }\answer{35}\text{ mi/hr}\]
+        \[\text{ Line: }\answer{y=35(t-3)+95}\]
+        \[
+        \text{Slope: }\answer{35}
+        \]
+        \item $t_1=3, t_2=3.5$
+         \[
+        \text{ Average speed: }\answer{32.5}\text{ mi/hr}\]
+        \[
+        \text{Line: }\answer{y-32.5(t-3)+95}\]
+        \[\text{Slope: }\answer{32.5}
+        \]
+        \item $t_1=3, t_2=3.25$
+         \[
+        \text{ Average speed: }\answer{31.25}\text{ mi/hr}\]
+        \[
+        \text{Line: }\answer{y-31.25(t-3)+95}
+        \]
+        \[
+    \text{Slope: }\answer{31.25}
+        \]
+        \item $t_1=3, t_2=3.05$
+         \[
+        \text{ Average speed: }\answer{30.25}\text{ mi/hr}
+        \]
+        \[
+        \text{Line: }\answer{y-30.25(t-3)+95}
+        \]
+        \[\text{Slope: }\answer{30.25}
+        \]
+        \item $t_1=3, t_2=3.0005$
+         \[
+        \text{ Average speed: }\answer{30.0025}\]
+        \[
+        \text{Line: }\answer{y-30.0025(t-3)+95}
+        \]
+        \[
+        \text{Slope: }\answer{30.0025}
+        \]
     \end{enumerate}
 \begin{center}
 \desmos{bb5c03efd3}{800}{600}
@@ -47,12 +100,164 @@
     
 \begin{question}
 What do you notice about the slopes of the lines in Question 2?
+\begin{freeResponse}
+    
+\end{freeResponse}
+    
+
 \end{question}
 
 \begin{question}
 If a cop was checking speeds and measured your speed with a radar gun when you had been driving exactly $1$ hour, can you guess what would speed would have shown on the radar gun?
+\[
+\answer{30}\text{ mi/hr}
+\]
+\end{question}
+\begin{question}
+How can you interpret your exact speed (instantaneous speed/velocity) as a limit? (hint: How did you get your answer for question 4?) Compute this limit.
+\begin{freeResponse}
+    
+\end{freeResponse}
+\[
+\lim\limits_{t\to \answer{3}}\frac{\answer{P(t)-P(3)}}{\answer{t-3}} = \answer{30}
+\]
 \end{question}
 
+
+
 \section{Check your understanding}
+
+ \begin{example}
+A young mathematician throws a ball straight into the air with
+a velocity of 40ft/sec. Its height (in feet) after $t$ seconds
+is given by
+\[
+s(t) = 40t-16t^2 \qquad\text{(feet above the ground)} .
+\]
+Here is the graph of $s$.
+\begin{image}
+\begin{tikzpicture}
+    \begin{axis}[
+            clip=false, domain=0:2.5, axis lines =middle, xlabel=$t$,
+            ylabel=$s$, every axis y label/.style={at=(current
+              axis.above origin),anchor=south}, every axis x
+            label/.style={at=(current axis.right of
+              origin),anchor=west}, ]
+          \addplot [very thick,smooth] {-16*x^2 +40*x};
+          %\addplot [very thick,penColor2] {80};
+          % \addplot [very thick,penColor4] {20};
+           \node at (axis cs:0,-1.2) {$0$};
+        \end{axis}
+\end{tikzpicture}
+\end{image}
+ 
+\begin{question}
+    When will the ball hit the ground?
+     
+        \begin{explanation}
+            
+       
+            To determine when the ball hits the ground we need to solve the equation
+            \[ s(t)=0 \]
+            for $t$.  That is,
+            \begin{align*}
+            40t-16t^2 &= 0\\
+            \answer{t(40-16t)} &= 0.
+            \end{align*}
+            This  equation has two solutions:
+            \[\answer{t=0} \text{ and } \answer{t=2.5}
+            \]
+            seconds.
+              
+               Since the ball hits
+            the ground  some time after it's
+            thrown, we conclude that the ball hits the ground at time when $t>0$.
+         
+            The ball will hit ground at the time
+            \[ t=\answer{2.5} \text{ seconds.} \]
+        \end{explanation}
+ 
+\end{question}
+ 
+ 
+\begin{question}
+    What is the height of the ball at $1.5$ seconds?
+     
+
+        The height of the ball after $1.5$ seconds is
+        \[ 
+        \answer{24}\text{ ft.} \]
+  
+\end{question}
+
+\begin{question}
+Estimate the time ($0<t<2.5$) at which the ball is not moving.
+
+The ball is not moving when
+\[
+t=\answer{1.25}\text{ seconds}
+\]
+\end{question}
+
+  \begin{question}
+    Compute the average velocity on the interval
+    \begin{enumerate}
+        \item $[0.5, 1]$
+            \[ v_{\text{av}} = \answer{16}\text{ ft/s} \hspace{0.06in}\text{ ft/s}\]
+        \item $[1.5,2]$
+            \[ v_{\text{av}} =\answer{-16} \hspace{0.06in}\text{ ft/s}\]
+           \item $[2,2.25]$
+            \[ v_{\text{av}} =\answer{-28} \hspace{0.06in}\text{ ft/s}\]
+    \end{enumerate}
+\end{question}
+\end{example}
+
+
+\begin{example}
+In our previous example, we computed \textit{average velocity} on
+several different intervals. We know that if we let $t\to 2$, the size of the interval will go to $0$ thus, we are computing the average velocity on smaller and
+smaller time intervals. Recall that the limit of these average velocities is the \emph{instantaneous velocity} at $t=2$.
+\begin{question}
+
+    Find $v(2)$, the instantaneous velocity of the ball $2$ seconds after it is thrown.
+     
+    \begin{explanation}
+        From the previous example, we know that the average velocity of the
+        ball on the interval $[t,2]$, for $0<t<2$, and the average velocity
+        on the interval $[2,t]$, for $2<t<2.5$, are both given by
+        \begin{align*}
+        v_{\text{av}}(t) &=  \frac{s(t)-s(2)}{t-2}\\  &= \frac{s(t)-s(1)}{{t}-{1}}\\
+                &= \frac{\answer{(40t-16t^2)}-\answer{16} }{\answer{t-2}}\\
+                &= \frac{-8\answer{(2t^2-5t+2)}}{t-2}\\
+                &= \frac{8(2t-1)\answer{(t-2)}}{-\answer{(t-2)}}\\
+                &= \answer{-8(2t-1)}\\
+                &= \answer{8-16t}\hspace{0.06in}\text{ ft/s}.
+        \end{align*}
+       
+        
+        In order to find the instantaneous velocity $v(2)$, we
+        take the limit as $t$ goes to $\answer{2}$.
+        \begin{align*}
+            v (2) &= \lim_{t\to2}v_{\text{av}}(t)\\
+                &=\lim_{t\to2}  \frac{s(t)-s(2)}{t-2} \\
+                &= \lim_{t\to2}(8-16t)\\
+                &= \answer{-24}\text{ ft/s}.
+        \end{align*}
+    \end{explanation}
+
+ 
+   
+     
+ 
+  
+\end{question}
+ 
+ 
+\end{example}
+ 
+
+
+ 
+
 
 \end{document}
