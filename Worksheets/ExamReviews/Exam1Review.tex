@@ -256,32 +256,49 @@ Consider the graph of $f(x)$ below.
 \begin{tikzpicture}
 \begin{axis}[
     axis lines = center,
+    % 1. Bind the labels dynamically to the arrow tips so they move with scaling
     xlabel = {$x$},
     ylabel = {$y$},
+    xlabel style={at={(ticklabel* cs:1)}, anchor=north west},
+    ylabel style={at={(ticklabel* cs:1)}, anchor=south east},
+    %
     xmin = -5, xmax = 5,
     ymin = -5, ymax = 5,
-    samples = 100,
-     xtick = {-4,...,4},
+    xtick = {-4,...,4},
     ytick = {-4,...,4},
     grid = both,
     grid style = {dashed, gray!30},
+    %
+    % 2. Safely enlarge the entire XY plane canvas here
+    width = 10cm,
+    height = 10cm,
+    %
+    samples = 100,
+    restrict y to domain = -10:10 % Stops the rational plots from escaping the grid box
 ]
-    % First piece: x^2 for x <= 0
+    % First piece: (x+3)^2 for -5 <= x <= -2
     \addplot[domain=-5:-2, thick, blue] {(x+3)^2};
     
-    % Second piece: x + 2 for x > 0
+    % Second piece: -x-1 for -2 < x <= -1
     \addplot[domain=-2:-1, thick, blue] {-x-1};
 
-     \addplot[domain=-1:0.99, thick, blue] {(x)/(x-1)-1};
+    % Third piece: x/(x-1) - 1 for -1 < x < 1
+    \addplot[domain=-1:0.99, thick, blue] {(x)/(x-1)-1};
 
-      \addplot[domain=1.01:5, thick, blue] {(2-x)/(x-1)};
+    % Fourth piece: (2-x)/(x-1) for 1 < x <= 5
+    \addplot[domain=1.01:5, thick, blue] {(2-x)/(x-1)};
     
-    % Endpoints (solid or hollow circles)
-    \fill[blue] (axis cs:-3,2) circle (2pt); % Included endpoint at (0,0)
-    \draw[blue, fill=white] (axis cs:-3,0) circle (2pt); % Excluded endpoint at (0,2)
-\fill[blue] (axis cs:-1,0) circle (2pt); % Included endpoint at (0,0)
-\draw[blue, fill=white] (axis cs:-1,-1/2) circle (2pt); 
+    % 3. Corrected Endpoints based on your domains:
+    
+    % Transition at x = -2 (Piece 1 evaluates to 1, Piece 2 evaluates to 1)
+    % It is continuous! No circles needed here.
 
+    % Transition at x = -1
+    \fill[blue] (axis cs:-1,0) circle (2pt);            % Solid dot at (-1,0) from Piece 2
+    \draw[blue, fill=white] (axis cs:-1,-0.5) circle (2pt); % Hollow dot at (-1,-0.5) from Piece 3
+
+   \draw[blue, fill=white] (axis cs:-3,0) circle (2pt);
+    \fill[blue] (axis cs:-3,2) circle (2pt);
 
 \end{axis}
 \end{tikzpicture}
