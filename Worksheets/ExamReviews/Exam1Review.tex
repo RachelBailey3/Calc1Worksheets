@@ -252,9 +252,43 @@ For $f(x)$ to be continuous at $x=2$, we need $\lim\limits_{x\to 2}f(x)=f(\answe
 
 \begin{problem}
 Consider the graph of $f(x)$ below.
-\begin{center}
-\includegraphics[scale=0.35]{xmPictures/Exam1PracticeGraph.pdf}
-\end{center}
+\begin{image}
+\begin{tikzpicture}
+\begin{axis}[
+    axis lines = center,
+    xlabel = {$x$},
+    ylabel = {$y$},
+    xmin = -5, xmax = 5,
+    ymin = -5, ymax = 5,
+    samples = 100,
+     xtick = {-4,...,4},
+    ytick = {-4,...,4},
+    grid = both,
+    grid style = {dashed, gray!30},
+]
+    % First piece: x^2 for x <= 0
+    \addplot[domain=-5:-2, thick, blue] {(x+3)^2};
+    
+    % Second piece: x + 2 for x > 0
+    \addplot[domain=-2:-1, thick, blue] {-x-1};
+
+     \addplot[domain=-1:0.99, thick, blue] {(x)/(x-1)-1};
+
+      \addplot[domain=1.01:5, thick, blue] {(2-x)/(x-1)};
+    
+    % Endpoints (solid or hollow circles)
+    \fill[blue] (axis cs:-3,2) circle (2pt); % Included endpoint at (0,0)
+    \draw[blue, fill=white] (axis cs:-3,0) circle (2pt); % Excluded endpoint at (0,2)
+\fill[blue] (axis cs:-1,0) circle (2pt); % Included endpoint at (0,0)
+\draw[blue, fill=white] (axis cs:-1,-1/2) circle (2pt); 
+
+
+\end{axis}
+\end{tikzpicture}
+\end{image}
+%\begin{center}
+%\includegraphics[scale=0.35]{xmPictures/Exam1PracticeGraph.pdf}
+%\end{center}
 
 \begin{enumerate}
     \item State all the discontinuities of $f(x)$ and list their types.\\
